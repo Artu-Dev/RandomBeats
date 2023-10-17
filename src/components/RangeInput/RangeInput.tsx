@@ -1,25 +1,16 @@
-import { FunctionComponent,useRef, useState } from 'react'
+import { FunctionComponent, RefObject } from 'react'
 import "./RangeInput.css"
 
 interface IRange {
 	text: string
 	id: string
 	defaultValue: string
-	cbValue(output: number): void
+	cbValue(): void
 	disabled: boolean
+	rangeRef: RefObject<HTMLInputElement>
 }
 
-export const RangeInput:FunctionComponent<IRange> = ({text, id, defaultValue, cbValue, disabled}) => {
-	const rangeRef = useRef<HTMLInputElement>(null);
-
-	const [output, setOutput] = useState<string>(defaultValue);
-
-	function handleChangeInput() {
-		if(rangeRef.current) {
-			setOutput(rangeRef.current.value)
-			cbValue(Number(output))
-		}
-	}
+export const RangeInput: FunctionComponent<IRange> = ({text, id, defaultValue, cbValue, disabled, rangeRef}) => {
 
 	return (
 		<span className="rangeinput-container">
@@ -28,7 +19,7 @@ export const RangeInput:FunctionComponent<IRange> = ({text, id, defaultValue, cb
 			</label>
 			<span>
 				<input 
-					onChange={handleChangeInput}
+					onChange={cbValue}
 					ref={rangeRef}
 					type="range"
 					id={id}
@@ -37,7 +28,7 @@ export const RangeInput:FunctionComponent<IRange> = ({text, id, defaultValue, cb
 					defaultValue={defaultValue}
 					disabled={disabled}
 				/>
-				<output>{output}</output>
+				<output>{rangeRef.current?.value}</output>
 			</span>
 		</span>
 	)

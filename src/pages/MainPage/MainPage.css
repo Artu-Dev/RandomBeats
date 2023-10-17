@@ -7,6 +7,10 @@
 	gap: 2rem;
 }
 
+.no-audio {
+	opacity: .8;
+}
+
 .audios-container {
 	padding: 1rem;
 	width: 100%;

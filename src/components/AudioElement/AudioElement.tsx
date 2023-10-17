@@ -1,5 +1,5 @@
 // import SOM from "./som.mp3";
-import { FunctionComponent, useEffect, useState } from "react";
+import { FunctionComponent, useEffect,useRef, useState } from "react";
 import ControlBtn from "../ControlBtn/ControlBtn";
 import {BsTrash2Fill, BsFillDiscFill, BsFillPlayFill, BsFillPauseFill} from "react-icons/bs"
 
@@ -16,8 +16,12 @@ interface ITesteProps {
 }
 
 const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemove, index}) => {
-	const [maxTimeUser, setMaxTimerUser] = useState<number>(30);
-	const [minTimeUser, setMinTimerUser] = useState<number>(5);
+
+	const [maxTimeUser, setMaxTimeUser] = useState<number>(30);
+	const [minTimeUser, setMinTimeUser] = useState<number>(5);
+	const maxTimeRef = useRef<HTMLInputElement>(null);
+	const minTimeRef = useRef<HTMLInputElement>(null);
+
 	const [isRunning, setIsRunning] = useState<boolean>(false);
 	const [audioTimeout, setAudioTimeout] = useState<ReturnType<typeof setTimeout>>();
 	
@@ -52,16 +56,11 @@ const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemov
 		audioElement?.pause();
 	}
 
-	
 	function getRandomTime() {
 		const minTime = minTimeUser * 60 * 1000;
 		const maxTime = maxTimeUser * 60 * 1000;
 
-		const result =  Math.floor(Math.random() * (maxTime - minTime +1) + minTime);
-
-		console.log(result/60000)
-
-		return result
+		return Math.floor(Math.random() * (maxTime - minTime +1) + minTime);
 	}
 
 	useEffect(() => {
@@ -72,8 +71,27 @@ const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemov
 		if(isRunning) {
 			handlePlayAudio();
 		}
+	}, [isRunning])  
 
-	}, [isRunning])
+
+
+	function handleRangeChange(isMin: boolean) {
+		if(!maxTimeRef.current || !minTimeRef.current) return;
+
+		const maxtime = Number(maxTimeRef.current.value);
+		const mintime = Number(minTimeRef.current.value);
+		setMinTimeUser(mintime)
+		setMaxTimeUser(maxtime)
+
+		if(mintime > maxtime) {
+			if(isMin) {
+				maxTimeRef.current.value = minTimeRef.current.value
+			} 
+			else {
+				minTimeRef.current.value = maxTimeRef.current.value
+			}
+		}
+	}
 
 	return (
 		<div className="audioElement-container">
@@ -108,15 +126,17 @@ const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemov
 					text="Intervalo Minimo (minutos)"
 					id="timeMin"
 					defaultValue="5"
-					cbValue={(value) => setMinTimerUser(value)}
+					cbValue={() => handleRangeChange(true)}
 					disabled={isRunning}
+					rangeRef={minTimeRef}
 					/>
 				<RangeInput 
 					text="Intervalo Maximo (minutos)"
 					id="timeMax"
 					defaultValue="30"
-					cbValue={(value) => setMaxTimerUser(value)}
+					cbValue={() => handleRangeChange(false)}
 					disabled={isRunning}
+					rangeRef={maxTimeRef}
 				/>
 			</div>
 

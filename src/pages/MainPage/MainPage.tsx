@@ -26,16 +26,14 @@ const MainPage = () => {
 	}
 	
 	function removeAudioFromList(index: number) {
-		console.log("index", index)
-		console.log("element", audiosList[index])
+		// console.log("index", index)
+		// console.log("element", audiosList[index])
 
 		const itemSelected = audiosList[index];
 		setAudiosList(prev => prev.filter((_, i) => i !== index));
 
 		URL.revokeObjectURL(itemSelected.audioURL);
 	}
-
-	console.log(audiosList)
 
 	return (
 		<main className="main-container">
@@ -45,7 +43,7 @@ const MainPage = () => {
 			/>
 
 			<div className="audios-container">
-				{!!audiosList.length &&
+				{!!audiosList.length ?
 					audiosList.map((item, i) => (
 						<AudioElement 
 							key={i}
@@ -55,6 +53,8 @@ const MainPage = () => {
 							onRemove={removeAudioFromList}
 						/>
 					))
+				:
+					<h1 className="no-audio">Nenhum áudio adicionado ainda '-'</h1>
 				}
 			</div>
 		

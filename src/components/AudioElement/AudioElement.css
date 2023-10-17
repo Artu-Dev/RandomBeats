@@ -3,6 +3,9 @@
 	--color-primary2: #468B97;
 	--color-secondary: #EF6262;
 	--color-secondary2: #F3AA60;
+	--color-black: #1b1b1b;
+	--color-black2:#0f0f0f;
+	--color-white: #f0f8ff;
 }
 
 .audioElement-container {
@@ -10,8 +13,8 @@
 	max-width: 800px;
 	display: flex;
 	flex-direction: column;
-	background: #1D5B79;
-	border: .2rem solid #468B97;
+	background: var(--color-primary);
+	border: .2rem solid var(--color-primary2);
 	font-size: 1rem;
 	border-radius: 1rem;
 	padding: 1rem 2rem;
@@ -33,7 +36,7 @@
 }
 
 .audioInfo {
-	color: aliceblue;
+	color: var(--color-white);
 	display: flex;
 	align-items: center;
 	gap: .8rem;
@@ -53,7 +56,7 @@
 	position: relative;
 	display: flex;
 	position: relative;
-	color: #e22d2d;
+	color: var(--color-secondary2);
 	transition: ease .3s;
 	filter: drop-shadow(0 0 5px #00000044);
 }
