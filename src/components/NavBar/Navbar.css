@@ -1,0 +1,41 @@
+.navbar-container {
+	background: #1D5B79;
+	width: 100%;
+	padding: 1rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 1rem;
+	box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+	position: fixed;
+	z-index: 2;
+}
+
+.navbar-title {
+	text-align: center;
+	font-size: 1.5em;
+	text-transform: uppercase;
+}
+
+.navbar-title span {
+	color: #F3AA60;
+}
+
+.navbar-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1em;
+	list-style: none;
+	font-size: 1.2rem;
+}
+
+.navbar-list a {
+	color: inherit;
+	display: flex;
+}
+
+.navbar-list li:hover {
+	cursor: pointer;
+	color: var(--color-secondary);
+}

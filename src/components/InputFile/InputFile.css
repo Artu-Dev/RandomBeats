@@ -1,0 +1,55 @@
+:root {
+	--color-primary: #1D5B79;
+	--color-primary2: #468B97;
+	--color-secondary: #EF6262;
+	--color-secondary2: #F3AA60;
+	--color-black: #1b1b1b;
+	--color-black2:#0f0f0f;
+	--color-white: #f0f8ff;
+}
+
+#input-audio {
+	display: none;
+}
+
+.inputFile-container {
+	background: var(--color-black);
+	color: var(--color-white);
+	border-radius: 1rem;
+	border: .2rem solid var(--color-white);
+	box-shadow: 0 .8rem .1rem var(--color-white);
+	transition: ease .3s;
+	cursor: pointer;
+	font-size: 1rem;
+}
+
+.inputFile-container:hover {
+	box-shadow: 0 0 0 var(--color-white);
+	transform: translateY(.8rem);
+	background: var(--color-black2);
+}
+
+.inputFile-container:hover label {
+	color: var(--color-white);
+	scale: 1.1;
+}
+
+.inputFile-container label {
+	padding: 1rem 5rem;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	transition: ease .3s;
+}
+
+.inputFile-container span {
+	font-size: 1.8em;
+	display: flex;
+}
+
+.inputFile-container p {
+	font-size: 1.1em;
+}
+

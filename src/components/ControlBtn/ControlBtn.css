@@ -1,0 +1,53 @@
+:root {
+	--color-primary: #1D5B79;
+	--color-primary2: #468B97;
+	--color-secondary: #EF6262;
+	--color-secondary2: #F3AA60;
+}
+
+.controlBtn {
+	padding: .4em;
+	border: 3px solid var(--color-secondary2);
+	border-radius: 3em;
+	background-color: #1b1b1b;
+	cursor: pointer;
+}
+
+.controlBtn-span {
+	background: #1b1b1b;
+	color: var(--color-secondary2);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .4rem;
+	font-size: 1.3rem;
+	font-weight: bold;
+	border-radius: 3em;
+	padding: .6rem 1.5rem;
+	border: .2rem solid var(--color-secondary2);
+	box-shadow: 0 .4em .1em .019em var(--color-secondary2);
+	position: relative;
+	bottom: .4rem;
+	transition: .3s  ease;
+}
+
+.controlBtn-span:hover {
+	box-shadow: 0 0 0;
+	bottom: 0;
+}
+
+.controlBtn-span .controlBtn-icon {
+	display: flex;
+}
+
+.controlBtn[disabled] {
+	border: .2rem solid var(--color-secondary);
+	cursor: default;
+}
+
+.controlBtn[disabled] .controlBtn-span {
+	color: var(--color-secondary);
+	border: .2rem solid var(--color-secondary);
+	box-shadow: 0 0 0;
+	bottom: 0;
+}

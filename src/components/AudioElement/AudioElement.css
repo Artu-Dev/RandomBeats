@@ -1,0 +1,146 @@
+:root {
+	--color-primary: #1D5B79;
+	--color-primary2: #468B97;
+	--color-secondary: #EF6262;
+	--color-secondary2: #F3AA60;
+}
+
+.audioElement-container {
+	width: 100%;
+	max-width: 800px;
+	display: flex;
+	flex-direction: column;
+	background: #1D5B79;
+	border: .2rem solid #468B97;
+	font-size: 1rem;
+	border-radius: 1rem;
+	padding: 1rem 2rem;
+	position: relative;
+	box-shadow: 0 0 8px inset rgba(0, 0, 0, 0.24);
+	transition: ease .3s;
+}
+
+.audioElement-container:hover {
+	background: #195472;
+	border: .2rem solid #8ca4a8;
+}
+
+.audioElement-main {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.audioInfo {
+	color: aliceblue;
+	display: flex;
+	align-items: center;
+	gap: .8rem;
+	max-width: 50%;
+	padding-right: .5rem;
+}
+
+.audioInfo h1 {
+	font-size: 1.5em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.audioInfo span {
+	font-size: 1.6em;
+	position: relative;
+	display: flex;
+	position: relative;
+	color: #e22d2d;
+	transition: ease .3s;
+	filter: drop-shadow(0 0 5px #00000044);
+}
+
+.audioInfo.running span {
+	animation: spin 2s linear infinite;
+}
+
+.audio-controls {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.deleteAudio {
+	cursor: pointer;
+	background: aliceblue;
+	color: #1b1b1b;
+	font-size: 1.2em;
+	right: -1rem;
+	top: -1rem;
+	height: 2.5em;
+	aspect-ratio: 1/1;
+	display: grid;
+	place-items: center;
+	position: absolute;
+	border-radius: 2rem;
+	z-index: 1;
+	cursor: pointer;
+	transition: ease .3s;
+	box-shadow: 0 0 8px rgba(0, 0, 0, 0.24);
+}
+
+.deleteAudio:hover {
+	color: #e22d2d;
+	scale: 1.05;
+}
+
+@keyframes spin {
+	0% {
+		rotate: 0deg;
+		color: #e22d2d
+	}
+	25% {color: #e2d02d}
+	50% {color: #2de23c}
+	75% {color: #2dbee2}
+	100% {
+		rotate: 360deg;
+		color: #e22dd9;
+	}
+}
+
+.audioElement-configs {
+	width: 100%;
+}
+
+
+@media (max-width: 870px) {
+	.audioElement-container {
+		padding: 1rem;
+		gap: 1rem;
+	}
+	.audioElement-main {
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	.audioInfo {
+		max-width: 100%;
+	}
+
+	.audioInfo h1 {
+		font-size: 1.8em;
+	}
+
+	.audioInfo span {
+		font-size: 1.6em;
+		top: .1rem;
+	}
+}
+
+@media (max-width: 500px) {
+	.audio-controls {
+		flex-direction: column;
+	}
+
+	.audioInfo {
+		font-size: .9rem;
+	}
+}

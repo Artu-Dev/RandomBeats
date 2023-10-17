@@ -1,0 +1,10 @@
+.footer-container {
+	background: var(--color-black);
+	text-align: center;
+	padding: 3rem 1rem;
+	color: var(--color-white);
+}
+
+.footer-container a {
+	color: var(--color-secondary);
+}
