@@ -35,5 +35,3 @@ Sinta-se à vontade para contribuir para o desenvolvimento do RandomBeats. Você
 ## Licença
 
 Este projeto está sob a licença MIT. Para obter mais detalhes, consulte o arquivo [LICENSE](URL da Licença) neste repositório.
-
-## Cont
