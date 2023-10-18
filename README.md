@@ -1,8 +1,15 @@
+
+<div align="center">
+  
 # RandomBeats
+  ![RandomBeats Logo](https://raw.githubusercontent.com/Artu-Dev/RandomBeats/main/src/assets/favicon.ico)
+</div>
 
-![RandomBeats Logo](https://raw.githubusercontent.com/Artu-Dev/RandomBeats/main/src/assets/favicon.ico)
+<div align="center">
+  
+  [Acessar RandomBeats](https://random-beats.vercel.app/)
+</div>
 
-[RandomBeats](https://random-beats.vercel.app/)
 
 ## Descrição
 
