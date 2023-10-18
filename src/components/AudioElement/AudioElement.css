@@ -1,20 +1,10 @@
-:root {
-	--color-primary: #1D5B79;
-	--color-primary2: #468B97;
-	--color-secondary: #EF6262;
-	--color-secondary2: #F3AA60;
-	--color-black: #1b1b1b;
-	--color-black2:#0f0f0f;
-	--color-white: #f0f8ff;
-}
-
 .audioElement-container {
 	width: 100%;
 	max-width: 800px;
 	display: flex;
 	flex-direction: column;
-	background: var(--color-primary);
-	border: .2rem solid var(--color-primary2);
+	background: var(--color-black3);
+	border: .2rem solid var(--color-white);
 	font-size: 1rem;
 	border-radius: 1rem;
 	padding: 1rem 2rem;
@@ -24,8 +14,8 @@
 }
 
 .audioElement-container:hover {
-	background: #195472;
-	border: .2rem solid #8ca4a8;
+	background: var(--color-black);
+	border: .2rem solid var(--color-white2);
 }
 
 .audioElement-main {
@@ -56,7 +46,7 @@
 	position: relative;
 	display: flex;
 	position: relative;
-	color: var(--color-secondary2);
+	color: var(--color-white);
 	transition: ease .3s;
 	filter: drop-shadow(0 0 5px #00000044);
 }
@@ -98,14 +88,14 @@
 @keyframes spin {
 	0% {
 		rotate: 0deg;
-		color: #e22d2d
+		color: #CD1818
 	}
-	25% {color: #e2d02d}
-	50% {color: #2de23c}
-	75% {color: #2dbee2}
+	25% {color: #ffee53}
+	50% {color: #28f790}
+	75% {color: #3034ff}
 	100% {
 		rotate: 360deg;
-		color: #e22dd9;
+		color: #CD1818;
 	}
 }
 

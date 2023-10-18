@@ -16,10 +16,11 @@
 	outline: none;
 	height: .3rem;
 	position: relative;
-	background: aliceblue;
+	background: var(--color-white2);
 	border-radius: 1rem;
 	opacity: .7;
-	transition: ease .3s ;
+	transition: ease .3s;
+  cursor: pointer;
 }
 
 .rangeinput-container input:hover {
@@ -33,7 +34,7 @@
 	width: 1.5rem;
 	height: 1.5rem;
 	border-radius: 50%;
-	background: #1b1b1b;
+	background: var(--color-secondary);
 }
 
 .rangeinput-container input::-webkit-slider-thumb:hover {
@@ -46,5 +47,10 @@
   height: 15px;
   border-radius: 50%;
   background-color: #000000;
-  cursor: pointer;
+}
+
+.rangeinput-container output {
+	color: var(--color-secondary);
+	width: 2rem;
+	text-align: center;
 }

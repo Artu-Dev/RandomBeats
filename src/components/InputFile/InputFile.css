@@ -1,19 +1,9 @@
-:root {
-	--color-primary: #1D5B79;
-	--color-primary2: #468B97;
-	--color-secondary: #EF6262;
-	--color-secondary2: #F3AA60;
-	--color-black: #1b1b1b;
-	--color-black2:#0f0f0f;
-	--color-white: #f0f8ff;
-}
-
 #input-audio {
 	display: none;
 }
 
 .inputFile-container {
-	background: var(--color-black);
+	background: var(--color-black3);
 	color: var(--color-white);
 	border-radius: 1rem;
 	border: .2rem solid var(--color-white);
@@ -26,7 +16,7 @@
 .inputFile-container:hover {
 	box-shadow: 0 0 0 var(--color-white);
 	transform: translateY(.8rem);
-	background: var(--color-black2);
+	background: var(--color-black);
 }
 
 .inputFile-container:hover label {
