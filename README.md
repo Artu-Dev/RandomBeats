@@ -2,7 +2,7 @@
 
 ![RandomBeats Logo](https://raw.githubusercontent.com/Artu-Dev/RandomBeats/main/src/assets/favicon.ico)
 
-[link](https://random-beats.vercel.app/)
+[RandomBeats](https://random-beats.vercel.app/)
 
 ## Descrição
 
