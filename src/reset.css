@@ -22,6 +22,7 @@ html, body {
 body {
   line-height: 1.5;
   font-family: 'Gabarito', sans-serif;
-  background: #242424 linear-gradient(#EB5757, #0b0b0b 95%);
+  background: #0b0b0b linear-gradient(#EB5757, #0b0b0b 80%) no-repeat fixed;
   color: #eee;
+	height: 100%;
 }
