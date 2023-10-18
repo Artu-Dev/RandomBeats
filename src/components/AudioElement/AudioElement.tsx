@@ -16,16 +16,15 @@ interface ITesteProps {
 }
 
 const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemove, index}) => {
-
 	const [maxTimeUser, setMaxTimeUser] = useState<number>(30);
 	const [minTimeUser, setMinTimeUser] = useState<number>(5);
-	const maxTimeRef = useRef<HTMLInputElement>(null);
-	const minTimeRef = useRef<HTMLInputElement>(null);
-
 	const [isRunning, setIsRunning] = useState<boolean>(false);
 	const [audioTimeout, setAudioTimeout] = useState<ReturnType<typeof setTimeout>>();
 	
-	const [audioElement, setAudioElement] = useState<HTMLAudioElement>();
+	const maxTimeRef = useRef<HTMLInputElement>(null);
+	const minTimeRef = useRef<HTMLInputElement>(null);
+	
+	const audioRef = useRef<HTMLAudioElement>(null);
 
 	function handleStart() {
 		setIsRunning(true);
@@ -46,14 +45,16 @@ const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemov
 	}
 	
 	function playAudio() {
-		if(audioElement) {
-			audioElement.play();
-			audioElement.currentTime = 0;
+		if(audioRef.current) {
+			audioRef.current.currentTime = 0;
+			audioRef.current.play();
 		}
 	}
 
 	function pauseAudio() {
-		audioElement?.pause();
+		if(audioRef.current) {
+			audioRef.current.pause();
+		}
 	}
 
 	function getRandomTime() {
@@ -64,16 +65,10 @@ const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemov
 	}
 
 	useEffect(() => {
-		setAudioElement(new Audio(audio))
-	}, [])
-
-	useEffect(() => {
 		if(isRunning) {
 			handlePlayAudio();
 		}
-	}, [isRunning])  
-
-
+	}, [isRunning]);
 
 	function handleRangeChange(isMin: boolean) {
 		if(!maxTimeRef.current || !minTimeRef.current) return;
@@ -95,6 +90,8 @@ const AudioElement: FunctionComponent<ITesteProps> = ({audioName, audio, onRemov
 
 	return (
 		<div className="audioElement-container">
+			<audio src={audio} ref={audioRef}></audio>
+
 			<span className="deleteAudio" onClick={() => onRemove(index)}>
 				<BsTrash2Fill/>
 			</span>

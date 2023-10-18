@@ -26,9 +26,6 @@ const MainPage = () => {
 	}
 	
 	function removeAudioFromList(index: number) {
-		// console.log("index", index)
-		// console.log("element", audiosList[index])
-
 		const itemSelected = audiosList[index];
 		setAudiosList(prev => prev.filter((_, i) => i !== index));
 
@@ -61,8 +58,5 @@ const MainPage = () => {
 		</main>
 	)
 }
-
-
-// corrigir bug quando tem 2 e apaga o de baixo o de cima buga
 
 export default MainPage
