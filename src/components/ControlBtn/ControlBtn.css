@@ -1,14 +1,3 @@
-:root {
-	--color-primary: #116D6E;
-	--color-secondary: #FF4C29;
-	--color-secondary2: #ff6546;
-	--color-black: #0b0b0b; 
-	--color-black2:#1b1b1b;
-	--color-black3: #111111;
-	--color-white: #f0f8ff;
-	--color-white2: #dbdbdb;
-}
-
 .controlBtn {
 	padding: .4em;
 	border: 3px solid var(--color-white);
