@@ -28,7 +28,7 @@ export const RangeInput: FunctionComponent<IRange> = ({text, id, defaultValue, c
 					defaultValue={defaultValue}
 					disabled={disabled}
 				/>
-				<output>{rangeRef.current?.value || "0"}</output>
+				<output>{rangeRef.current?.value || `${defaultValue}`}</output>
 			</span>
 		</span>
 	)
