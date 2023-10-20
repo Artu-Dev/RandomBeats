@@ -1,8 +1,15 @@
+
+<div align="center">
+  
 # RandomBeats
+  ![RandomBeats Logo](https://raw.githubusercontent.com/Artu-Dev/RandomBeats/main/src/assets/favicon.ico)
+</div>
 
-![RandomBeats Logo](https://raw.githubusercontent.com/Artu-Dev/RandomBeats/main/src/assets/favicon.ico)
+<div align="center">
+  
+  [Acessar RandomBeats](https://random-beats.vercel.app/)
+</div>
 
-[RandomBeats](https://random-beats.vercel.app/)
 
 ## Descrição
 
@@ -34,4 +41,4 @@ Sinta-se à vontade para contribuir para o desenvolvimento do RandomBeats. Você
 
 ## Licença
 
-Este projeto está sob a licença MIT. Para obter mais detalhes, consulte o arquivo [LICENSE](URL da Licença) neste repositório.
+Este projeto está sob a licença MIT. Para obter mais detalhes, consulte o arquivo [LICENSE](https://raw.githubusercontent.com/Artu-Dev/RandomBeats/main/LICENSE) neste repositório.
